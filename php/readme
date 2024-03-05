@@ -1,0 +1,63 @@
+ create table user(
+    ->id int(11)auto_increment primary key,
+    -> username varchar(255)unique,
+    -> email varchar(255)unique,
+    -> nama_lengkap varchar(255),
+    -> password varchar(255),
+    -> alamat longtext);
+
+create table masukan(
+    -> id int(11)auto_increment primary key,
+    -> masukan longtext,
+    -> tanggal date,
+    -> user_id int(12),
+    -> foreign key(user_id) references user(id));
+
+create table buku(
+    -> id int(11)auto_increment primary key,
+    -> judul varchar(255),
+    -> penulis varchar(255),
+    -> penerbit varchar(255),
+    -> sinopsis longtext,
+    -> jumlah_halaman int(12),
+    -> bahasa varchar(255),
+    -> stok int (12),
+    -> tahun_terbit int(11));
+
+create table Kategori(
+    -> id int(11)auto_increment primary key,
+    -> nama_kategori varchar(255));
+
+create table kategori_buku_relasi(
+    -> id int(11)auto_increment primary key,
+    -> buku_id int(11),
+    -> kategori_id int (11),
+    -> foreign key (buku_id)references buku(id),
+    -> foreign key (kategori_id)references kategori_id(id));
+
+create table peminjaman(
+    -> id int(11)auto_increment primary key,
+    -> user_id int(11),
+    -> buku_id int(11),
+    -> tanggal_peminjaman date,
+    -> tanggal_pengembalian date,
+    -> status_peminjaman enum ("sudah_dikembalikan","belum_dikembalikan"),
+    -> foreign key (user_id)references user(id),
+    -> foreign key (buku_id)references Buku(id));
+
+create table koleksi(
+    -> id int(11) auto_increment primary key,
+    -> user_id int(11),
+    -> user_id int(11),
+    -> foreign key (user_id)references user(id),
+    -> foreign key (buku_id)references Buku(id));
+
+
+create table ulasan_buku(
+    -> id int(11)auto_increment primary key,
+    -> user_id int(11),
+    -> buku_id int(11),
+    -> ulasan longtext,
+    -> rating int(11),
+    -> foreign key (user_id)references user(id),
+    -> foreign key (buku_id)references Buku(id));
