@@ -108,6 +108,7 @@ if (isset($_SESSION['message'])) {
                 </a>
                 <ul class="sub-menu blank">
                     <li><a class="link_name" href="laporan.php">Laporan</a></li>
+                    <li><a class="link_name" href="export.php">Export Laporan</a></li>
                 </ul>
             </li>
 

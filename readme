@@ -1,0 +1,32 @@
+database: perpus
+peminjam: username=peminjam, password=peminjam
+admin: username=admin, password=admin
+
+
+fitur admin:
+    -tambah buku
+    -hapus buku
+    -edit buku
+    -tambah kategori
+    -edit kategori
+    -buat akun petugas
+    -lihat ulasan
+    -lihat masukan
+    -perbarui status pinjaman
+    -cetak laporan
+    -export laporan ke excel
+    -tambah stok buku
+
+fitur peminjam:
+    -pinjam buku
+    -tambah buku ke favorit
+    -beri masukan
+    -beri ulasan buku
+    -hapus koleksi
+
+note:
+    -peminjam tidak bisa memberi ulasan jika belum pernah meminjam buku yang ingin diberi ulasan
+    -peminjam tidak bisa meminjam buku yang stoknya kurang dari 1(satu)
+    -status peminjaman ada dua yaitu(belum dikembalikan, dan sudah dikembalikan)
+    -stok akan berkurang otomatis saat dipinjam dan akan bertambahkan otomatis saat status peminjaman buku sudah diperbarui oleh admin
+    -perbedaan ulasan dan masukan adalah ulasan dikhususkan untuk buku tertentu sedangkan masukan dikhususkan untuk pihak pengelola perpustakaan

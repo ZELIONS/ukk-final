@@ -3,7 +3,7 @@ class Database {
     private $host = 'localhost';
     private $username = 'root';
     private $password = '';
-    private $database = 'perpus';
+    private $database = 'ukk_zelion';
     private $conn;
 
     // Constructor

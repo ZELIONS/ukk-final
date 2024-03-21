@@ -100,6 +100,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id'])) {
                 </a>
                 <ul class="sub-menu blank">
                     <li><a class="link_name" href="laporan.php">Laporan</a></li>
+                    <li><a class="link_name" href="export.php">Export Laporan</a></li>
                 </ul>
             </li>
 
@@ -125,7 +126,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id'])) {
 
     <div class="container">
 
-        <?php foreach ($tampil_buku as $buku): ?>
+        <?php foreach ($tampil_buku as $buku) : ?>
 
             <div class="kiri" style="background-image: url('../../ASSETS/GAMBAR/<?php echo $buku['gambar']; ?>');">
 
@@ -138,7 +139,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id'])) {
 
 
             <!--content-->
-            <?php foreach ($tampil_ulasan as $ulasan): ?>
+            <?php foreach ($tampil_ulasan as $ulasan) : ?>
 
                 <div class="content">
                     <div>
